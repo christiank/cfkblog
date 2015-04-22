@@ -1,0 +1,10 @@
+<h2>All Posts</h2>
+
+<table id="all-posts">
+  <% posts.each do |post| %>
+    <tr>
+      <td class="bold"><%= post.timestamp.strftime("%m/%d/%Y") %></td>
+      <td><a href="/posts/<%= post.slug %>"><%= post.title %></a></td>
+    </tr>
+  <% end %>
+</table>

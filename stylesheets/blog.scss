@@ -1,0 +1,82 @@
+$banner-bg: #ccc;
+$banner-border: #aaa;
+$link-color: #f50;
+$link-hover-color: #f72;
+
+@mixin no-margin-padding {
+  margin: 0em;
+  padding: 0em;
+}
+
+body {
+  @include no-margin-padding;
+  background-color: #fff;
+  color: #000;
+  width: 100%;
+  font-family: "Helvetica", sans-serif;
+  text-align: justify;
+}
+
+#top {
+  background-color: $banner-bg;
+  padding: 1em;
+  border-style: solid;
+  border-width: 0em 0em 0.25em 0em;
+  border-color: $banner-border;
+}
+
+#top header {
+  width: 50em;
+  margin: auto;
+}
+
+#top header hgroup h1 {
+  @include no-margin-padding;
+}
+
+#top nav ul li {
+  list-style: none;
+  display: inline;
+  padding: 0em 1em 0em 0em;
+}
+
+#top nav ul {
+  @include no-margin-padding;
+}
+
+#main {
+  margin: auto;
+  width: 50em;
+}
+
+#bottom {
+  width: 50em;
+  margin: auto;
+}
+
+#bottom footer {
+  margin: 4em 0em 0em 0em;
+  font-size: small;
+}
+
+#all-posts tr td {
+  padding: 0em 1em 0em 0em;
+}
+
+.timestamp {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+a {
+  color: $link-color;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: $link-hover-color;
+}

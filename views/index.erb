@@ -1,0 +1,9 @@
+<% posts.each do |post| %>
+  <article>
+    <header>
+      <h1><a href="/posts/<%= post.slug %>"><%= post.title %></a></h1>
+      <p class="timestamp"><%= prettytime(post.timestamp) %></p>
+      <%= markdown(post.blurb) %>
+    </header>
+  </article>
+<% end %>
