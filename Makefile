@@ -1,7 +1,8 @@
 .PHONY: \
 	migrations dbshell dev-server-start server-start server-restart update
 
-DB=./db/cfkblog.sqlite3
+DBDIR=./db
+DB=$(DBDIR)/cfkblog.sqlite3
 DEPLOYDIR=/home/christian/blog/blog
 OPSDIR=/home/christian/blog-ops
 
@@ -10,6 +11,7 @@ public/css/blog.css: stylesheets/blog.scss
 	sass $(.ALLSRC) $(.TARGET)
 
 migrations:
+	mkdir -p $(DBDIR)
 	sequel -E -m ./migrations sqlite://$(DB)
 
 dbshell:
